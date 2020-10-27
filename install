@@ -1,0 +1,12 @@
+#!/bin/bash
+
+chmod +x ~/bin/timemachine
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd-auto.plist
+launchctl load ~/Library/LaunchAgents/timemachine_eject.plist
+
+# Any time you want to make changes to the plist file, you have to unload and load it:
+#
+#```
+#launchctl unload ~/Library/LaunchAgents/timemachine_eject.plist
+#launchctl load ~/Library/LaunchAgents/timemachine_eject.plist
+#```

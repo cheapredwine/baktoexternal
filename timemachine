@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# /bin/timemachine
+d="Time Machine"  # (change this to match the name of your backup drive)
+diskutil mount "$d" && tmutil startbackup -b && diskutil eject "$d"
